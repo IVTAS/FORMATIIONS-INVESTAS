@@ -1,16 +1,21 @@
 /* TEAM */
-Developer: Joseph Sampayo
-Designer: INVESTAS Team
-Content: INVESTAS International
+Author: SAMPAYO Joseph
+Project: FORMATIONS-INVESTAS
+Organization: INVESTAS
+Description: Site officiel de présentation des formations professionnelles, administratives, techniques et financières.
+Language: Français (fr)
+Country: Luxembourg
+Creation-Date: 2025-10-07
+Last-Update: 2025-10-07
 
-/* SITE */
-Name: INVESTAS FORMATIONS
-URL: https://github.com/ton-utilisateur/FORMATIONS-INVESTAS
-Last update: 2025-10-07
-Standards: HTML5, CSS3, JS
-Language: FR
-Framework: None
+/* TECHNICAL DETAILS */
+HTML-Version: HTML5
+Responsive: Yes
+SEO-Optimized: Yes
+Hosting: GitHub Pages
+Repository: https://github.com/ivtas/FORMATIONS-INVESTAS
+Website: https://ivtas.github.io/FORMATIONS-INVESTAS/
 
 /* THANKS */
-Thanks: To all our partners, collaborators, and users
-Contact: contact@investas.com
+Developed with support from ChatGPT (OpenAI)
+Respectfully designed for learners and partners of INVESTAS.
