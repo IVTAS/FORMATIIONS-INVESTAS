@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil - INVESTAS</title>
+    <meta
+      name="description"
+      content="INVESTAS International propose des formations pratiques de courtes durées à tarifs réduits, pour accéder rapidement au marché du travail et développer vos compétences professionnelles."
+    />
+    <meta
+      name="keywords"
+      content="INVESTAS, formation pratique, accès à l'éducation, réduction du chômage, création d'emplois, compétences professionnelles"
+    />
+    <meta name="robots" content="index, follow" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+      }
+      #cercle-container {
+        position: relative;
+        width: 500px;
+        max-width: 90%;
+        height: 500px;
+        margin: 30px auto;
+        transform: translateY(-20px);
+      }
+      .pas-gateau {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        animation: rotate 20s linear infinite;
+        z-index: 1;
+      }
+      .pas-gateau div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+      }
+      .pas-gateau div:nth-child(1) {
+        background: #ffb347;
+        transform: rotate(0deg);
+      }
+      .pas-gateau div:nth-child(2) {
+        background: #47ffb3;
+        transform: rotate(120deg);
+      }
+      .pas-gateau div:nth-child(3) {
+        background: #477bff;
+        transform: rotate(240deg);
+      }
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      .cercle {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        z-index: 2;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+      .cercle .numero {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: #000;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 5;
+      }
+      .cercle.haut {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ff5733;
+        color: #fff;
+      }
+      .cercle.droite {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #9b59b6;
+        color: #fff;
+      }
+      .cercle.bas {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #33a1ff;
+        color: #fff;
+      }
+      .cercle.gauche {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #28b463;
+        color: #fff;
+      }
+      .accordion-content {
+        position: absolute;
+        width: 90%;
+        max-height: 0;
+        overflow: auto;
+        padding: 0 20px;
+        border-radius: 8px;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 10;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        font-size: 21px;
+        line-height: 1.6;
+        text-align: justify;
+        bottom: 0;
+      }
+      .accordion-content h3 {
+        margin: 10px 0;
+        font-size: 23px;
+        text-align: left;
+      }
+      .accordion-content p,
+      .accordion-content ul,
+      .accordion-content li {
+        margin-bottom: 1.5em;
+      }
+      .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 12;
+      }
+      .cercle.haut + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.haut + .accordion-content strong {
+        color: gold;
+      }
+      .cercle.haut + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.droite + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.droite + .accordion-content strong {
+        color: #007bff;
+      }
+      .cercle.droite + .accordion-content h3 {
+        color: #006400;
+      }
+      @media (max-width: 500px) {
+        #cercle-container {
+          width: 320px;
+          height: 320px;
+        }
+        .cercle {
+          width: 90px;
+          height: 90px;
+          font-size: 14px;
+          padding: 5px;
+        }
+        .pas-gateau {
+          width: 90px;
+          height: 90px;
+        }
+        .accordion-content {
+          width: 250px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cercle-container">
+      <div class="pas-gateau">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- Section 1 -->
+      <div class="cercle haut">
+        OBJECTIFS PRINCIPAL <span class="numero">1</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>ACCÈS À L'ÉDUCATION</h3>
+        <p>
+          L'accès à l'Education est un droit fondamentale pour tous les citoyens
+          du monde. Force est de constater aujourd'hui que ce droit n’est plus
+          garanti en général pour raison financière.
+        </p>
+        <p>
+          L'impossibilité d'accéder librement et convenablement à l'éducation
+          est un des paramètres visibles de la misère que nous combattons en
+          permanence.
+        </p>
+        <p>
+          <strong>L'accès à l'éducation est un devoir sacré</strong>, c'est la
+          raison pour laquelle <strong>INVESTAS International</strong> considère
+          que :
+        </p>
+        <ul>
+          <li>
+            <strong>Le Coût d'une formation</strong> ne doit plus être un frein
+            à l'accès à l'éducation.
+          </li>
+          <li>
+            <strong>La réduction du temps de formation</strong> pratique est une
+            solution d'accès au marché du travail et au tissu économique.
+          </li>
+          <li>
+            <strong>La formation pratique</strong> est le mécanisme vous
+            permettant d'être directement opérationnelle dès la fin de votre
+            formation et cela quelque soit votre niveau actuel.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="cercle droite">
+        RÉDUCTION DU CHÔMAGE <span class="numero">2</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>RÉDUCTION DU CHÔMAGE</h3>
+        <p>
+          <strong>Dans le but de réduire le chômage</strong> et de permettre aux
+          populations d'accéder au marché du travail avec une solide expérience
+          professionnelle en un temps court,
+          <strong>INVESTAS International</strong> a mis en place des formations
+          pratiques de courtes durées à tarifs réduits dans chaque pays
+          concerné.
+        </p>
+        <h3>CRÉATION D’EMPLOIS ET RICHESSES</h3>
+        <p>
+          L'accès à l'éducation permet l'accès au marché de l’emploi. Avec une
+          expérience pratique acquise, chaque personne a une chance effective
+          d'accéder au marché des emplois éventuels. L'expérience pratique
+          professionnelle acquise lors des formations permet à chacun de
+          s'installer à son compte et créer de la richesse.
+        </p>
+        <h3>LIMITATION DE L'IMMIGRATION CLANDESTINE</h3>
+        <ul>
+          <li>Acquérir une connaissance pratique dans sa région.</li>
+          <li>Accéder à un emploi.</li>
+          <li>Se mettre à son propre compte.</li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="cercle bas">
+        IMPACT DE LA FORMATION <span class="numero">3</span>
+      </div>
+      <div class="accordion-content" style="background: #000; color: #fff">
+        <span class="close-btn">&times;</span>
+        <h3 style="color: #7cfc00">IMPACT DE LA FORMATION</h3>
+        <p>
+          <strong style="color: gold">INVESTAS INTERNATIONAL</strong> vous
+          permet :
+        </p>
+        <ul>
+          <li>d'être directement opérationnel sur le marché de travail.</li>
+          <li>d'accéder au tissu économique si vous souhaitez entreprendre.</li>
+          <li>
+            d'acquérir des connaissances et techniques nouvelles adaptées à
+            votre métier.
+          </li>
+          <li>
+            d'apporter une connaissance supplémentaire pour professionnels et
+            débutants.
+          </li>
+          <li>
+            d'atteindre un niveau professionnel pratique et avancé dans votre
+            secteur.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="cercle gauche">APPEL <span class="numero">4</span></div>
+      <div class="accordion-content" style="background: #f0f0f0; color: #000">
+        <span class="close-btn">&times;</span>
+        <h3 style="color: #006400">APPEL</h3>
+        <p>Nous lançons dès aujourd’hui un appel à chaque citoyen du monde.</p>
+        <p>
+          Quelque soit votre niveau d'étude, et quelque soit l’endroit où vous
+          vous trouvez,
+          <strong style="color: #007bff">INVESTAS International</strong> peut
+          vous apporter une expérience professionnelle qualifiante et nécessaire
+          pour mieux vous insérer dans le tissu économique et réduire le
+          chômage.
+        </p>
+        <p>
+          <span class="highlight">Rejoignez dès aujourd’hui notre</span>
+          <strong style="color: #007bff"
+            >Communauté de membres Actifs INVESTAS International</strong
+          >
+          pour bénéficier de nombreux avantages pour votre formation et celle de
+          votre entourage ou entreprise.
+        </p>
+        <p>
+          Bâtissons ensemble un nouvel avenir professionnel et permettons à nos
+          proches ou entreprises d'accéder librement à l'éducation pour acquérir
+          des connaissances professionnelles pratiques dans un temps court et à
+          coûts réduits.
+        </p>
+      </div>
+
+      <script>
+        const cercles = document.querySelectorAll(".cercle");
+        const contents = document.querySelectorAll(".accordion-content");
+        const closeBtns = document.querySelectorAll(".close-btn");
+
+        cercles.forEach((cercle, i) => {
+          cercle.addEventListener("click", () => {
+            contents.forEach((c, j) => {
+              if (i === j) {
+                // ouverture vers le haut
+                c.style.maxHeight = c.scrollHeight + "px";
+                c.style.padding = "20px";
+              } else {
+                c.style.maxHeight = null;
+                c.style.padding = "0 20px";
+              }
+            });
+          });
+        });
+
+        closeBtns.forEach((btn, i) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            contents[i].style.maxHeight = null;
+            contents[i].style.padding = "0 20px";
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>

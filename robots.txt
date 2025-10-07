@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Lien vers ton sitemap (à mettre à jour après la mise en ligne GitHub Pages)
+Sitemap: https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/sitemap.xml
