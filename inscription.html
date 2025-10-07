@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S'inscrire - INVESTAS</title>
+    <meta
+      name="description"
+      content="Inscription aux formations INVESTAS International : étapes, paiement, validation et confirmation."
+    />
+    <meta
+      name="keywords"
+      content="INSCRIPTION, INVESTAS, formation, paiement, validation, confirmation"
+    />
+    <meta name="robots" content="index, follow" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+      }
+      #cercle-container {
+        position: relative;
+        width: 500px;
+        max-width: 90%;
+        height: 500px;
+        margin: 30px auto;
+        transform: translateY(-20px);
+      }
+      .pas-gateau {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        animation: rotate 20s linear infinite;
+        z-index: 1;
+      }
+      .pas-gateau div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+      }
+      .pas-gateau div:nth-child(1) {
+        background: #ffb347;
+        transform: rotate(0deg);
+      }
+      .pas-gateau div:nth-child(2) {
+        background: #47ffb3;
+        transform: rotate(120deg);
+      }
+      .pas-gateau div:nth-child(3) {
+        background: #477bff;
+        transform: rotate(240deg);
+      }
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      .cercle {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        z-index: 2;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #fff;
+      }
+      .cercle .numero {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: #000;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 5;
+      }
+      .cercle.haut {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ff5733;
+      }
+      .cercle.droite {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #9b59b6;
+      }
+      .cercle.bas {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #33a1ff;
+      }
+      .cercle.gauche {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #28b463;
+      }
+
+      .accordion-content {
+        position: absolute;
+        width: 90%;
+        max-height: 0;
+        overflow: auto;
+        padding: 0 20px;
+        border-radius: 8px;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 20;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        font-size: 21px;
+        line-height: 1.6;
+        text-align: justify;
+        bottom: 0;
+      }
+      .accordion-content h3 {
+        margin: 10px 0;
+        font-size: 23px;
+        text-align: left;
+      }
+      .accordion-content p,
+      .accordion-content ul,
+      .accordion-content li {
+        margin-bottom: 1.5em;
+      }
+      .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 12;
+      }
+
+      .cercle.haut + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.haut + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.haut + .accordion-content strong {
+        color: gold;
+      }
+
+      .cercle.droite + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.droite + .accordion-content h3 {
+        color: #006400;
+      }
+      .cercle.droite + .accordion-content strong {
+        color: #007bff;
+      }
+
+      .cercle.bas + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.bas + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.bas + .accordion-content strong {
+        color: gold;
+      }
+
+      .cercle.gauche + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.gauche + .accordion-content h3 {
+        color: #006400;
+      }
+      .cercle.gauche + .accordion-content strong {
+        color: #007bff;
+      }
+
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 0.6em;
+      }
+
+      button[type="submit"],
+      button[type="reset"] {
+        padding: 8px 15px;
+        margin-right: 10px;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button[type="submit"] {
+        background: #28b463;
+      }
+      button[type="reset"] {
+        background: #ff5733;
+      }
+
+      @media (max-width: 500px) {
+        #cercle-container {
+          width: 320px;
+          height: 320px;
+        }
+        .cercle {
+          width: 90px;
+          height: 90px;
+          font-size: 14px;
+          padding: 5px;
+        }
+        .pas-gateau {
+          width: 90px;
+          height: 90px;
+        }
+        .accordion-content {
+          width: 250px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cercle-container">
+      <div class="pas-gateau">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- Section 1 : Boule rouge -->
+      <div class="cercle haut">INSCRIPTION<span class="numero">1</span></div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>INSCRIPTION</h3>
+        <p>
+          Si vous souhaitez participer à une formation, vous devez d'abord vous
+          inscrire via notre site Web.
+        </p>
+        <p>
+          <strong>⛔ Attention !</strong> Ne faites aucun paiement sans avoir
+          reçu la confirmation de votre inscription par INVESTAS International.
+        </p>
+        <form>
+          <table>
+            <tr>
+              <td>Candidat ou Formateur* :</td>
+              <td><input type="text" name="role" required /></td>
+            </tr>
+            <tr>
+              <td>Nom* :</td>
+              <td><input type="text" name="nom" required /></td>
+            </tr>
+            <tr>
+              <td>Prénoms* :</td>
+              <td><input type="text" name="prenom" required /></td>
+            </tr>
+            <tr>
+              <td>Téléphone* :</td>
+              <td><input type="tel" name="tel" required /></td>
+            </tr>
+            <tr>
+              <td>Pays* :</td>
+              <td><input type="text" name="pays" required /></td>
+            </tr>
+            <tr>
+              <td>Ville* :</td>
+              <td><input type="text" name="ville" required /></td>
+            </tr>
+            <tr>
+              <td>Formation* :</td>
+              <td><input type="text" name="formation" required /></td>
+            </tr>
+            <tr>
+              <td>Numéro CNI :</td>
+              <td><input type="text" name="cni" /></td>
+            </tr>
+            <tr>
+              <td>Télécharger CNI/Passeport* :</td>
+              <td><input type="file" name="file" required /></td>
+            </tr>
+            <tr>
+              <td>Message :</td>
+              <td><textarea name="message"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button type="submit">VALIDER</button>
+                <button type="reset">ANNULER</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+
+      <!-- Section 2 : Boule mauve -->
+      <div class="cercle droite">CONFIRMATION<span class="numero">2</span></div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>CONFIRMATION</h3>
+        <p>
+          Lorsque nous recevons vos données, nous vous enverrons une
+          confirmation avec les informations du compte, le mode de paiement et
+          la facture.
+        </p>
+        <p>
+          <strong
+            >⛔ Ne faites jamais de paiement en mains propres ni sans la facture
+            INVESTAS International.</strong
+          >
+        </p>
+      </div>
+
+      <!-- Section 3 : Boule bleue -->
+      <div class="cercle bas">PAIEMENT<span class="numero">3</span></div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>ETAPE 3 : PAIEMENT</h3>
+        <p>
+          Vous effectuez le paiement total de la formation et transmettez la
+          preuve par mail, WhatsApp ou Telegram (maximum 48h).
+        </p>
+        <ul>
+          <li>
+            Paiement 100% en cryptomonnaies : BNB, BUSD, USD, USDT, BITCOINS,
+            ETHEREUM.
+          </li>
+          <li>Ou en partie en cryptomonnaie INVESTAS International.</li>
+        </ul>
+        <p>
+          <strong
+            >Sans preuve de paiement, l'inscription ne sera pas validée.</strong
+          >
+        </p>
+      </div>
+
+      <!-- Section 4 : Boule verte -->
+      <div class="cercle gauche">
+        VALIDATION INSCRIPTION<span class="numero">4</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>VALIDATION INSCRIPTION</h3>
+        <ul>
+          <li>Le reçu de confirmation de paiement vous sera envoyé.</li>
+          <li>Le planning initial de votre formation vous sera transmis.</li>
+          <li>Date de démarrage de la formation décidée d'un commun accord.</li>
+          <li>Le détails des modules (chapitres) vous sera envoyé.</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const cercles = document.querySelectorAll(".cercle");
+      const contents = document.querySelectorAll(".accordion-content");
+      const closeBtns = document.querySelectorAll(".close-btn");
+
+      cercles.forEach((cercle, i) => {
+        cercle.addEventListener("click", () => {
+          contents.forEach((c, j) => {
+            if (i === j) {
+              c.style.maxHeight = c.scrollHeight + "px";
+              c.style.padding = "20px";
+              c.style.zIndex = 30; // Affiche par-dessus les autres
+            } else {
+              c.style.maxHeight = null;
+              c.style.padding = "0 20px";
+              c.style.zIndex = 20;
+            }
+          });
+        });
+      });
+
+      closeBtns.forEach((btn, i) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          contents[i].style.maxHeight = null;
+          contents[i].style.padding = "0 20px";
+          contents[i].style.zIndex = 20;
+        });
+      });
+    </script>
+  </body>
+</html>

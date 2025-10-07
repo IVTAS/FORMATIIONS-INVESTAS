@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INVESTAS - Formations</title>
+    <meta
+      name="description"
+      content="INVESTAS International propose des formations pratiques de courtes durées à tarifs réduits, pour accéder rapidement au marché du travail et développer vos compétences professionnelles."
+    />
+    <meta
+      name="keywords"
+      content="INVESTAS, formation pratique, accès à l'éducation, réduction du chômage, création d'emplois, compétences professionnelles"
+    />
+    <meta name="robots" content="index, follow" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background-color: #fff;
+        color: #000;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Couleurs */
+      :root {
+        --bleu-points: #007bff;
+        --vert-lisible: #7cfc00;
+      }
+
+      /* En-tête */
+      header {
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 30px;
+        position: relative;
+      }
+      header .ligne-principale {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+      header .logo img {
+        height: 60px;
+      }
+      header .titre {
+        color: var(--bleu-points);
+        font-weight: bold;
+        font-size: clamp(32px, 4vw, 38px);
+        text-align: left;
+      }
+      header .sous-titre {
+        color: #000;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 5px;
+      }
+      header .audio-btn {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: var(--bleu-points);
+        border: none;
+        padding: 6px 8px;
+        border-radius: 50%;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      /* Bande défilante */
+      .marquee-container {
+        background: #000;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .marquee-container p {
+        display: inline-block;
+        color: gold;
+        font-weight: bold;
+        font-size: 1.45em;
+        padding-left: 100%;
+        animation: marquee 60s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* Zone haute */
+      #zone-haute {
+        background: #000;
+        color: #fff;
+        padding: 50px 30px 30px 30px;
+        text-align: center;
+        position: relative;
+      }
+      #zone-haute h1 {
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      #zone-haute .points {
+        margin-top: 20px;
+        line-height: 1.6;
+        text-align: left;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      #zone-haute .points li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+      }
+      #zone-haute .points li .num {
+        display: inline-block;
+        background: var(--bleu-points);
+        color: #fff;
+        font-weight: bold;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        margin-right: 10px;
+        flex-shrink: 0;
+        line-height: 30px;
+      }
+      #zone-haute .rejoignez {
+        color: var(--vert-lisible);
+        font-size: 18px;
+        margin-top: 20px;
+        font-weight: normal;
+      }
+      #zone-haute img {
+        display: block;
+        margin: 20px auto;
+        max-height: 250px;
+      }
+
+      /* Onglets */
+      #onglets {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      #onglets div {
+        cursor: pointer;
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+      #onglets div.active {
+        color: gold;
+        text-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+      }
+
+      /* Zone bas */
+      #zone-bas {
+        background: #fff;
+        color: #000;
+        padding: 50px 30px;
+        min-height: 500px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #zone-bas h2 {
+        font-weight: bold;
+        font-size: 26px;
+        color: var(--bleu-points);
+        margin-bottom: 20px;
+        margin-top: 0;
+        z-index: 2;
+        position: relative;
+      }
+      #zone-bas img {
+        display: block;
+        max-width: 500px;
+        width: 125%;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+      #zone-bas .citation {
+        position: absolute;
+        bottom: 10px;
+        left: 30px;
+        text-align: left;
+        font-style: italic;
+        line-height: 1.5;
+        max-width: 90%;
+        transition: all 0.3s ease;
+      }
+      #zone-bas .citation .nom-auteur {
+        color: blue;
+        font-weight: bold;
+      }
+      #onglet-content {
+        margin-top: 20px;
+        position: relative;
+        z-index: 3;
+      }
+
+      /* Pied de page */
+      footer {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 15px 30px;
+        position: relative;
+      }
+      footer .email {
+        color: gold;
+        display: block;
+        margin-top: 5px;
+      }
+      footer .compteur {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: gold;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      /* Responsive */
+      @media (max-width: 500px) {
+        #zone-bas img {
+          width: 150%;
+          max-width: 300px;
+        }
+        #zone-bas h2 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="ligne-principale">
+        <div class="logo">
+          <img src="2025-INVESTAS.jpg" alt="Logo INVESTAS" />
+        </div>
+        <div class="titre">INVESTAS INTERNATIONAL FORMATIONS</div>
+      </div>
+      <div class="sous-titre">INTERNATIONAL INVESTMENT ASSOCIATION</div>
+      <button class="audio-btn" onclick="toggleAudio()">🔊</button>
+    </header>
+
+    <div class="marquee-container">
+      <p>
+        50% de Réduction pour toutes les formations du 1er Octobre au 30
+        Décembre 2025.
+      </p>
+    </div>
+
+    <div id="zone-haute">
+      <h1>FORMATIONS PRATIQUES DE COURTES DUREES A PRIX REDUITS</h1>
+      <p
+        style="
+          text-align: left;
+          max-width: 700px;
+          margin: 0 auto;
+          font-weight: bold;
+        "
+      >
+        L’Accès à l'éducation et au savoir est un devoir sacré.<br />Accédez au
+        savoir :
+      </p>
+      <ul class="points">
+        <li><span class="num">1</span>En un Temps Court (1 à 3 mois).</li>
+        <li>
+          <span class="num">2</span>Avec une Expérience Professionnelle
+          Pratique.
+        </li>
+        <li><span class="num">3</span>À Tarif Réduit.</li>
+      </ul>
+      <p class="rejoignez">
+        Rejoignez la communauté INVESTAS International pour participer au
+        développement de votre région.
+      </p>
+      <img src="FORMATION-INVESTAS.jpg" alt="Formation INVESTAS" />
+      <div id="onglets">
+        <div class="active" data-file="accueil.html">Accueil</div>
+        <div data-file="a-propos.html">À-propos</div>
+        <div data-file="types-formations.html">Types Formations</div>
+        <div data-file="modes-formations.html">Modes Formations</div>
+        <div data-file="inscription.html">Inscription</div>
+        <div data-file="avantages.html">Avantages</div>
+        <div data-file="partenariats.html">Partenariats</div>
+        <div data-file="emplois.html">Emplois</div>
+        <div data-file="attestation.html">Attestation</div>
+        <div data-file="promo.html">Promo</div>
+      </div>
+    </div>
+
+    <div id="zone-bas">
+      <h2 id="bienvenue-text">BIENVENUE CHEZ INVESTAS</h2>
+      <img id="page-blanche" src="CENTRE-INVESTAS.jpg" alt="Centre INVESTAS" />
+      <div class="citation" id="franz-kafka">
+        « Nous ne devons lire que des livres qui nous mordent et qui nous
+        piquent. Si le livre que nous lisons ne nous réveille pas d'un coup de
+        poing sur la tête, à quoi bon lire. Le livre doit être la hache qui
+        brise la mer gelée en nous. » -
+        <span class="nom-auteur">Franz Kafka</span>
+      </div>
+      <div id="onglet-content">
+        <!-- Contenu onglets chargé dynamiquement -->
+      </div>
+    </div>
+
+    <footer>
+      2025 - INVESTAS - FORMATIONS DE COURTES DUREES
+      <span class="email">egied2024@gmail.com</span>
+      <span class="compteur" onclick="showCompteur()">●</span>
+    </footer>
+
+    <audio id="audio" src="AUDIO-KIT-ALIM.mp3"></audio>
+
+    <script>
+      // Audio
+      let audioStarted = false;
+      const audio = document.getElementById("audio");
+
+      function toggleAudio() {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+
+      // Compteur
+      function showCompteur() {
+        const pwd = prompt("Entrer mot de passe pour voir le compteur :");
+        if (pwd === "IED2024@") {
+          alert("Nombre de visites : 123");
+        } else {
+          alert("Mot de passe incorrect.");
+        }
+      }
+
+      // Fonction pour activer les accordéons
+      function activerAccordeon() {
+        const cercles = document.querySelectorAll("#onglet-content .cercle");
+        const contents = document.querySelectorAll(
+          "#onglet-content .accordion-content"
+        );
+        const closeBtns = document.querySelectorAll(
+          "#onglet-content .close-btn"
+        );
+
+        cercles.forEach((cercle, i) => {
+          cercle.addEventListener("click", () => {
+            if (!audioStarted) {
+              audio.play();
+              audioStarted = true;
+            }
+            contents.forEach((c, j) => {
+              if (i === j) {
+                c.style.maxHeight = c.scrollHeight + "px";
+                c.style.padding = "20px";
+              } else {
+                c.style.maxHeight = null;
+                c.style.padding = "0 20px";
+              }
+            });
+          });
+        });
+
+        closeBtns.forEach((btn, i) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            contents[i].style.maxHeight = null;
+            contents[i].style.padding = "0 20px";
+          });
+        });
+      }
+
+      // Effet visuel fort : page blanche remonte
+      const onglets = document.querySelectorAll("#onglets div");
+      const content = document.getElementById("onglet-content");
+      const zoneBas = document.getElementById("zone-bas");
+
+      function effetVisuelFort() {
+        zoneBas.style.transition =
+          "transform 0.7s cubic-bezier(0.68,-0.55,0.27,1.55)";
+        zoneBas.style.transform = "translateY(-200px)"; // forte remontée
+        setTimeout(() => {
+          zoneBas.style.transform = "translateY(0)";
+        }, 700);
+      }
+
+      function chargerOnglet(file) {
+        effetVisuelFort(); // Lancer l'effet visuel fort à chaque clic
+        fetch(file)
+          .then((res) => res.text())
+          .then((data) => {
+            content.innerHTML = data;
+            activerAccordeon(); // activation des boules pour l'onglet chargé
+          })
+          .catch((err) => {
+            content.innerHTML = "<p>Erreur de chargement.</p>";
+          });
+      }
+
+      onglets.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          onglets.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          chargerOnglet(tab.dataset.file);
+        });
+      });
+
+      // Ajustement photo et texte
+      window.addEventListener("DOMContentLoaded", () => {
+        const pageBlanche = document.getElementById("page-blanche");
+        const bienvenueText = document.getElementById("bienvenue-text");
+        const franz = document.getElementById("franz-kafka");
+
+        pageBlanche.style.width = "125%";
+        pageBlanche.style.marginTop = "15px";
+        bienvenueText.style.marginTop = "0px";
+        bienvenueText.style.transform = "translateY(0)";
+        // Position de Franz Kafka reste intacte
+
+        // Charger Accueil par défaut
+        chargerOnglet("accueil.html");
+      });
+    </script>
+  </body>
+</html>

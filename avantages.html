@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avantages - INVESTAS</title>
+    <meta
+      name="description"
+      content="Découvrez les avantages de devenir membre actif de la communauté INVESTAS International : financement, accès au marché de l'emploi, expériences professionnelles et éducation pour tous."
+    />
+    <meta
+      name="keywords"
+      content="INVESTAS, avantages, financement projet, marché de l'emploi, expériences professionnelles, éducation pour tous"
+    />
+    <meta name="robots" content="index, follow" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+      }
+      #cercle-container {
+        position: relative;
+        width: 500px;
+        max-width: 90%;
+        height: 500px;
+        margin: 30px auto;
+        transform: translateY(-20px);
+      }
+      .pas-gateau {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        animation: rotate 20s linear infinite;
+        z-index: 1;
+      }
+      .pas-gateau div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+      }
+      .pas-gateau div:nth-child(1) {
+        background: #ffb347;
+        transform: rotate(0deg);
+      }
+      .pas-gateau div:nth-child(2) {
+        background: #47ffb3;
+        transform: rotate(120deg);
+      }
+      .pas-gateau div:nth-child(3) {
+        background: #477bff;
+        transform: rotate(240deg);
+      }
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      .cercle {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        z-index: 2;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+      .cercle .numero {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: #000;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 5;
+      }
+      .cercle.haut {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ff5733;
+        color: #fff;
+      }
+      .cercle.droite {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #9b59b6;
+        color: #fff;
+      }
+      .cercle.bas {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #33a1ff;
+        color: #fff;
+      }
+      .cercle.gauche {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #28b463;
+        color: #fff;
+      }
+      .accordion-content {
+        position: absolute;
+        width: 90%;
+        max-height: 0;
+        overflow: auto;
+        padding: 0 20px;
+        border-radius: 8px;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 10;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        font-size: 21px;
+        line-height: 1.6;
+        text-align: justify;
+        bottom: 0;
+      }
+      .accordion-content h3 {
+        margin: 10px 0;
+        font-size: 23px;
+        text-align: left;
+      }
+      .accordion-content p,
+      .accordion-content ul,
+      .accordion-content li {
+        margin-bottom: 1.5em;
+      }
+      .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 12;
+      }
+      .cercle.haut + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.haut + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.haut + .accordion-content strong {
+        color: gold;
+      }
+      .cercle.droite + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.droite + .accordion-content h3 {
+        color: #006400;
+      }
+      .cercle.droite + .accordion-content strong {
+        color: #007bff;
+      }
+      .cercle.bas + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.bas + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.bas + .accordion-content strong {
+        color: gold;
+      }
+      .cercle.gauche + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.gauche + .accordion-content h3 {
+        color: #006400;
+      }
+      .cercle.gauche + .accordion-content strong {
+        color: #007bff;
+      }
+      @media (max-width: 500px) {
+        #cercle-container {
+          width: 320px;
+          height: 320px;
+        }
+        .cercle {
+          width: 90px;
+          height: 90px;
+          font-size: 14px;
+          padding: 5px;
+        }
+        .pas-gateau {
+          width: 90px;
+          height: 90px;
+        }
+        .accordion-content {
+          width: 250px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cercle-container">
+      <div class="pas-gateau">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- Section 1 -->
+      <div class="cercle haut">
+        FINANCEMENT DE VOTRE PROJET <span class="numero">1</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>FINANCEMENT DE VOTRE PROJET</h3>
+        <ul>
+          <li>Recevoir un Financement pour votre projet après la formation.</li>
+          <li>Devenir independant et accéder au tissu économique.</li>
+          <li>
+            Consultez notre page web (Onglet 'Services') :
+            <a
+              href="https://ivtas.github.io/INVESTAS-INTERNATIONAL-SITE/#"
+              style="color: gold"
+              >https://ivtas.github.io/INVESTAS-INTERNATIONAL-SITE/#</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="cercle droite">
+        ACCES RAPIDE AU MARCHE DE L'EMPLOIS <span class="numero">2</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3 style="color: #006400; font-weight: bold">
+          ACCES RAPIDE AU MARCHE DE L'EMPLOIS
+        </h3>
+        <ul>
+          <li>
+            Accès au réseau d'entreprises INVESTAS International pour les
+            personnes en quête d'emplois.
+          </li>
+          <li>
+            Acces au reseau INVESTAS pour le recrutement d'employés qualifiés et
+            expérimentés.
+          </li>
+          <li>
+            Formation de Courtes durées pour vite intégrer le marché de
+            l’emplois.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="cercle bas">
+        EXPÉRIENCE PROFESSIONNELLE <span class="numero">3</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>EXPÉRIENCE PROFESSIONNELLE</h3>
+        <ul>
+          <li>
+            Possibilités de Stages en entreprise chez INVESTAS ou chez nos
+            partenaires.
+          </li>
+          <li>Attestation de Stage et Formation.</li>
+          <li>
+            Formations de niveau International adaptées aux besoins de chaque
+            pays.
+          </li>
+          <li>Formations pratiques et qualifiantes.</li>
+        </ul>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="cercle gauche">
+        ACCES A L'EDUCATION POUR TOUS <span class="numero">4</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3 style="color: #006400">ACCES A L'EDUCATION POUR TOUS</h3>
+        <ul>
+          <li>Formation à prix réduit.</li>
+          <li>
+            Accès à l'éducation quelque soit votre cursus scolaire ou
+            professionnel.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const cercles = document.querySelectorAll(".cercle");
+      const contents = document.querySelectorAll(".accordion-content");
+      const closeBtns = document.querySelectorAll(".close-btn");
+
+      cercles.forEach((cercle, i) => {
+        cercle.addEventListener("click", () => {
+          contents.forEach((c, j) => {
+            if (i === j) {
+              c.style.maxHeight = c.scrollHeight + "px";
+              c.style.padding = "20px";
+            } else {
+              c.style.maxHeight = null;
+              c.style.padding = "0 20px";
+            }
+          });
+        });
+      });
+
+      closeBtns.forEach((btn, i) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          contents[i].style.maxHeight = null;
+          contents[i].style.padding = "0 20px";
+        });
+      });
+    </script>
+  </body>
+</html>

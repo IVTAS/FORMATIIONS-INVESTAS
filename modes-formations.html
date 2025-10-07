@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modes / Planning & Modules de Formations - INVESTAS</title>
+    <meta
+      name="description"
+      content="Découvrez les modes, planning et modules de formations pratiques proposés par INVESTAS International pour un apprentissage efficace et adapté."
+    />
+    <meta
+      name="keywords"
+      content="INVESTAS, formations en ligne, formations présentiel, planning formations, modules formations, apprentissage, compétences professionnelles"
+    />
+    <meta name="robots" content="index, follow" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+      }
+      #cercle-container {
+        position: relative;
+        width: 500px;
+        max-width: 90%;
+        height: 500px;
+        margin: 30px auto;
+        transform: translateY(-20px);
+      }
+      .pas-gateau {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        animation: rotate 20s linear infinite;
+        z-index: 1;
+      }
+      .pas-gateau div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+      }
+      .pas-gateau div:nth-child(1) {
+        background: #ffb347;
+        transform: rotate(0deg);
+      }
+      .pas-gateau div:nth-child(2) {
+        background: #47ffb3;
+        transform: rotate(120deg);
+      }
+      .pas-gateau div:nth-child(3) {
+        background: #477bff;
+        transform: rotate(240deg);
+      }
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      .cercle {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        z-index: 2;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+      .cercle .numero {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: #000;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 5;
+      }
+      .cercle.haut {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ff5733;
+        color: #fff;
+      }
+      .cercle.droite {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #9b59b6;
+        color: #fff;
+      }
+      .cercle.bas {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #33a1ff;
+        color: #fff;
+      }
+      .cercle.gauche {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #28b463;
+        color: #fff;
+      }
+      .accordion-content {
+        position: absolute;
+        width: 90%;
+        max-height: 0;
+        overflow: auto;
+        padding: 0 20px;
+        border-radius: 8px;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 10;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        font-size: 21px;
+        line-height: 1.6;
+        text-align: justify;
+        bottom: 0;
+      }
+      .accordion-content h3 {
+        margin: 10px 0;
+        font-size: 23px;
+        text-align: left;
+      }
+      .accordion-content p,
+      .accordion-content ul,
+      .accordion-content li {
+        margin-bottom: 1.5em;
+      }
+      .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 12;
+      }
+      /* Couleurs des sections */
+      .cercle.haut + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.haut + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.haut + .accordion-content strong {
+        color: gold;
+      }
+      .cercle.droite + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.droite + .accordion-content h3 {
+        color: #006400;
+      }
+      .cercle.droite + .accordion-content strong {
+        color: #007bff;
+      }
+      .cercle.bas + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.bas + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.bas + .accordion-content strong {
+        color: gold;
+      }
+      .cercle.gauche + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.gauche + .accordion-content h3 {
+        color: #006400;
+      }
+      .cercle.gauche + .accordion-content strong {
+        color: #007bff;
+      }
+      @media (max-width: 500px) {
+        #cercle-container {
+          width: 320px;
+          height: 320px;
+        }
+        .cercle {
+          width: 90px;
+          height: 90px;
+          font-size: 14px;
+          padding: 5px;
+        }
+        .pas-gateau {
+          width: 90px;
+          height: 90px;
+        }
+        .accordion-content {
+          width: 250px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cercle-container">
+      <div class="pas-gateau">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- Section 1 -->
+      <div class="cercle haut">
+        MODES DE FORMATIONS <span class="numero">1</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3 style="color: #7cfc00">EN LIGNE :</h3>
+        <p>
+          Nos formations se font en ligne généralement (Visio conférences) et
+          par envois de documents et tutoriels via les canaux (Mails, WhatsApp,
+          Telegram etc.). Tout au long de la formation il y aura des échanges de
+          questionnaire et d'exercices entre le candidat et les formateurs
+          INVESTAS.
+        </p>
+        <p>L'examen final se déroule aussi en ligne, en visio etc.</p>
+        <h3 style="color: #7cfc00">EN PRESENTIEL :</h3>
+        <p>
+          Nos formateurs peuvent aussi se déplacer selon les accords établis
+          pour la formation dans une région concernée.
+        </p>
+        <p>
+          Nous précisons que <strong>INVESTAS International</strong> dispose et
+          recrute plusieurs formateurs qualifiés dans chaque région concernée,
+          cependant les formations en présentiel (groupes ou individuels)
+          obéissent à des accords préétablis.
+        </p>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="cercle droite">
+        PLANNING DE FORMATIONS <span class="numero">2</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3 style="color: #006400; font-weight: bold">
+          PLANNING DE FORMATIONS :
+        </h3>
+        <p>
+          <strong style="color: #006400">Durée des formations :</strong> 1 à 3
+          mois
+        </p>
+        <p>
+          <strong style="color: #006400">Heure de Formations :</strong> 2h à 4h
+        </p>
+        <h3 style="color: #006400; font-weight: bold">
+          Les formations en ligne :
+        </h3>
+        <p>
+          Les formations en ligne se font de façon continue tout le long de
+          l'année sans interruption. Il suffit de vous inscrire en payant les
+          frais de formation pour que votre formation personnelle ou de groupe
+          puisse démarrer. Chaque personne ou groupe reçoit son propre
+          <strong>planning</strong> en fonction de sa date d'inscription après
+          son inscription.
+        </p>
+        <h3 style="color: #006400; font-weight: bold">
+          Les formations en présentiel :
+        </h3>
+        <p>
+          Les formations en présentiel se font selon un planning consensuel
+          défini au préalable. Ce <strong>planning</strong> dépend des
+          disponibilités de chaque partie, cependant nous appliquons les délais
+          de chaque 2 ou 3 jours par semaine.
+        </p>
+        <p>
+          <em>Exemple : Lundi, Mercredi, Vendredi ou Mardi, Jeudi, Samedi.</em>
+        </p>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="cercle bas">
+        FORMATIONS SPECIALES <span class="numero">3</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3 style="color: #7cfc00">EN SALLE :</h3>
+        <p>
+          <strong>INVESTAS International</strong> peut mettre à disposition ses
+          propres locaux ou louer des locaux pour des formations temporaires ou
+          continues dans chaque zone en fonction du flux de personnes à former
+          en présentiel (Minimum 50 personnes par mois).
+        </p>
+        <h3 style="color: #7cfc00">DEPLACEMENT CHEZ VOUS :</h3>
+        <p>
+          Nos formateurs peuvent se déplacer dans votre entreprise ou chez vous
+          à domicile dans certaines conditions de commun accord en mettant en
+          place des plannings personnalisés.
+        </p>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="cercle gauche">
+        MODULES DE FORMATIONS <span class="numero">4</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3 style="color: #006400">MODULES DE FORMATIONS :</h3>
+        <p>
+          Les modules de formations sont envoyés chapitre par chapitre
+          uniquement aux personnes inscrites durant la formation.
+        </p>
+        <p>
+          Après chaque <strong>chapitre</strong> des exercices vous seront
+          envoyés. C'est après vos réponses et corrections que les autres
+          modules suivront.
+        </p>
+        <p>
+          La liste des chapitres contenus dans les modules vous sera communiquée
+          après votre inscription.
+        </p>
+        <p>
+          Un résumé des chapitres vous sera transmis uniquement sur simple
+          demande (voir l'onglet contact).
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const cercles = document.querySelectorAll(".cercle");
+      const contents = document.querySelectorAll(".accordion-content");
+      const closeBtns = document.querySelectorAll(".close-btn");
+
+      cercles.forEach((cercle, i) => {
+        cercle.addEventListener("click", () => {
+          contents.forEach((c, j) => {
+            if (i === j) {
+              // ouverture vers le haut
+              c.style.maxHeight = c.scrollHeight + "px";
+              c.style.padding = "20px";
+            } else {
+              c.style.maxHeight = null;
+              c.style.padding = "0 20px";
+            }
+          });
+        });
+      });
+
+      closeBtns.forEach((btn, i) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          contents[i].style.maxHeight = null;
+          contents[i].style.padding = "0 20px";
+        });
+      });
+    </script>
+  </body>
+</html>

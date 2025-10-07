@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROMOTION</title>
+    <meta
+      name="description"
+      content="PROMOTIONS INVESTAS : réductions et offres spéciales sur les formations. 50% de réduction jusqu'au 30/12/2025."
+    />
+    <meta
+      name="keywords"
+      content="INVESTAS, promotions, formation, réduction, cryptomonnaie, membres actifs"
+    />
+    <meta name="robots" content="index, follow" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        color: #000;
+        line-height: 1.5;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      #cercle-container {
+        position: relative;
+        width: 500px;
+        max-width: 90%;
+        height: 500px;
+        margin: 30px auto;
+        transform: translateY(-20px);
+      }
+      .pas-gateau {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        animation: rotate 20s linear infinite;
+        z-index: 1;
+      }
+      .pas-gateau div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+      }
+      .pas-gateau div:nth-child(1) {
+        background: #ffb347;
+        transform: rotate(0deg);
+      }
+      .pas-gateau div:nth-child(2) {
+        background: #47ffb3;
+        transform: rotate(120deg);
+      }
+      .pas-gateau div:nth-child(3) {
+        background: #477bff;
+        transform: rotate(240deg);
+      }
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      .cercle {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        z-index: 2;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #fff;
+      }
+      .cercle .numero {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: #000;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 5;
+      }
+      .cercle.haut {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ff5733;
+      }
+      .cercle.droite {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #9b59b6;
+      }
+      .cercle.bas {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #33a1ff;
+      }
+      .cercle.gauche {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #28b463;
+      }
+      .accordion-content {
+        position: absolute;
+        width: 90%;
+        max-height: 0;
+        overflow: auto;
+        padding: 0 20px;
+        border-radius: 8px;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 10;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        font-size: 21px;
+        text-align: left;
+        bottom: 0;
+      }
+      .accordion-content h3,
+      .accordion-content h4 {
+        font-size: 23px;
+        margin-top: 10px;
+      }
+      .close-btn {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 12;
+      }
+      .cercle.haut + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.haut + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.haut + .accordion-content strong {
+        color: gold;
+      }
+      .cercle.droite + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.droite + .accordion-content h3 {
+        color: #006400;
+      }
+      .cercle.droite + .accordion-content strong {
+        color: #007bff;
+      }
+      .cercle.bas + .accordion-content {
+        background: #000;
+        color: #fff;
+      }
+      .cercle.bas + .accordion-content h3 {
+        color: #7cfc00;
+      }
+      .cercle.bas + .accordion-content strong {
+        color: gold;
+      }
+      .cercle.gauche + .accordion-content {
+        background: #f0f0f0;
+        color: #000;
+      }
+      .cercle.gauche + .accordion-content h3 {
+        color: #006400;
+      }
+      .cercle.gauche + .accordion-content strong {
+        color: #007bff;
+      }
+      .accordion-content p,
+      .accordion-content ul,
+      .accordion-content li {
+        margin-bottom: 1em;
+        font-size: 21px;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 0.6em;
+      }
+      @media (max-width: 500px) {
+        #cercle-container {
+          width: 320px;
+          height: 320px;
+        }
+        .cercle {
+          width: 90px;
+          height: 90px;
+          font-size: 14px;
+          padding: 6px;
+        }
+        .pas-gateau {
+          width: 90px;
+          height: 90px;
+        }
+        .accordion-content {
+          width: 250px;
+          font-size: 21px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cercle-container">
+      <div class="pas-gateau">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- Boule rouge -->
+      <div class="cercle haut">
+        PROMOTIONS<br />ACTUELLES<span class="numero">1</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>PROMOTIONS ACTUELLES</h3>
+        <p><strong>Promotion actuelle jusqu'au 30.12.2025 :</strong></p>
+        <p>
+          <strong style="color: gold">50% de Réduction</strong> sur toutes nos
+          formations en cette fin d'année 2025.
+        </p>
+        <p>
+          <strong>Conditions :</strong> Inscrivez-vous avant le 30 décembre
+          2025. Les promotions sont ponctuelles et périodiques — consultez la
+          bande passante de la page d'accueil pour les annonces.
+        </p>
+      </div>
+
+      <!-- Boule mauve -->
+      <div class="cercle droite">
+        PROMO SPECIALES<span class="numero">2</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>PROMO SPÉCIALES</h3>
+        <p>
+          Si vous payez votre formation pendant la période ci-dessous, vous
+          bénéficiez des réductions même si la formation commence plus tard.
+        </p>
+        <p><strong>Du :</strong> 1er Octobre 2025 au 30 Décembre 2025.</p>
+
+        <h3 style="color: #006400">FORMATIONS TECHNIQUES</h3>
+        <ul>
+          <li>
+            <strong>ENERGIE SOLAIRE :</strong> 10% de réduction supplémentaires.
+          </li>
+          <li>
+            <strong>SCHEMA ELECTRIQUE :</strong> 10% de réduction
+            supplémentaires.
+          </li>
+        </ul>
+
+        <h3 style="color: #006400">FORMATIONS FINANCIÈRES</h3>
+        <ul>
+          <li>
+            <strong>INITIATION A LA CRYPTOMONNAIE :</strong> 10% de réduction
+            supplémentaires.
+          </li>
+          <li>
+            <strong>GESTION DE WALLET ET TRANSACTIONS :</strong> 15% de
+            réduction supplémentaires.
+          </li>
+        </ul>
+
+        <h3 style="color: #006400">FORMATIONS ADMINISTRATIVES</h3>
+        <ul>
+          <li>
+            <strong>ASSISTANTE DE DIRECTION :</strong> 5% de réduction
+            supplémentaires.
+          </li>
+          <li>
+            <strong>ANGLAIS DE BASE :</strong> 5% de réduction supplémentaires.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Boule bleue -->
+      <div class="cercle bas">
+        MEMBRES ACTIFS CRYPTO<span class="numero">3</span>
+      </div>
+      <div class="accordion-content">
+        <span class="close-btn">&times;</span>
+        <h3>MEMBRES ACTIFS CRYPTO</h3>
+        <ol>
+          <li>
+            <strong style="color: gold">Cryptomonnaies :</strong> vous pouvez
+            payer vos formations en BNB, BUSD, USDT, BTC, ETH, etc.
+          </li>
+          <li>
+            <strong style="color: gold">Cryptomonnaie INVESTAS :</strong> si
+            vous êtes membre actif, payez 25% en INVESTAS et profitez d'une
+            réduction supplémentaire de 10%.
+          </li>
+          <li>
+            <strong style="color: gold"
+              >Groupements / Associations / Entreprises :</strong
+            >
+            réductions supplémentaires possibles pour inscriptions groupées.
+          </li>
+        </ol>
+        <p>
+          Consultez notre site pour les détails :
+          <a
+            href="https://ivtas.github.io/INVESTAS-INTERNATIONAL-SITE/#"
+            style="color: gold"
+            >ivtas.github.io/INVESTAS-INTERNATIONAL-SITE/#</a
+          >
+        </p>
+      </div>
+
+      <!-- Boule verte -->
+  <div class="cercle gauche">NOS ACTIONS SOCIALES<span class="numero">4</span></div>
+  <div class="accordion-content">
+    <span class="close-btn">&times;</span>
+    <h3>NOS ACTIVES</h3>
+
+    <h4 style="color:#006400; margin-top:8px">ACTIONS SOCIALES</h4>
+    <p><strong>INVESTAS International</strong> offre des formations gratuites pour œuvres sociales et associations caritatives selon conditions. Contactez : <strong style="color:#007BFF;">egied2024@gmail.com</strong></p>
+
+    <ul>
+      <li>Événementiels : (A venir)</li>
+      <li>Vidéos : (A venir)</li>
+      <li>Conférences : (A venir)</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const cercles = document.querySelectorAll('.cercle');
+const contents = document.querySelectorAll('.accordion-content');
+const closeBtns = document.querySelectorAll('.close-btn');
+
+cercles.forEach((cercle, i) => {
+  cercle.addEventListener('click', () => {
+    contents.forEach((c, j) => {
+      if(i === j){
+        c.style.maxHeight = c.scrollHeight + 'px';
+        c.style.padding = '20px';
+      } else {
+        c.style.maxHeight = null;
+        c.style.padding = '0 20px';
+      }
+    });
+  });
+});
+
+closeBtns.forEach((btn, i) => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    contents[i].style.maxHeight = null;
+    contents[i].style.padding = '0 20px';
+  });
+});
+</script>
+</body>
+</html>
+    </div>
+  </body>
+</html>
