@@ -1,44 +1,27 @@
-# FORMATIONS INVESTAS
+# FORMATIONS-INVESTAS
 
-Site officiel des formations et stages d’**INVESTAS International**.
+Ce dépôt contient l'ensemble des fichiers du site **INVESTAS FORMATIONS**, optimisé pour le SEO et entièrement responsive.
 
-## 🌐 Description
-Ce site présente :
-- Les différents types de formations proposées
-- Les attestations et conditions d’obtention
-- Les avantages et opportunités d’emploi
-- Les informations d’inscription et de partenariat
+## Structure des fichiers
+- `index.html` — Page d'accueil
+- `a-propos.html` — À propos
+- `accueil.html` — Page principale
+- `attestation.html` — Attestations de formation
+- `avantages.html` — Avantages des formations
+- `emplois.html` — Accès au marché de l'emploi
+- `inscription.html` — Inscription en ligne
+- `modes-formations.html` — Modes de formation
+- `partenariats.html` — Partenariats
+- `promo.html` — Promotions et offres
+- `types-formations.html` — Liste complète des formations
 
-## 🧱 Structure du site
-Le site comprend 11 pages principales :
-- index.html (page principale avec entête et pied de page)
-- accueil.html
-- a-propos.html
-- attestation.html
-- avantages.html
-- emplois.html
-- inscription.html
-- modes-formations.html
-- partenariats.html
-- promo.html
-- types-formations.html
+## Liens
+Le site est disponible ici : [https://ivtas.github.io/FORMATIIONS-INVESTAS/](https://ivtas.github.io/FORMATIIONS-INVESTAS/)
 
-## ⚙️ Technologies utilisées
-- HTML5, CSS3, JavaScript (pur)
-- Site 100% responsive et optimisé SEO
-- Hébergement sur **GitHub Pages**
+## Fichiers SEO
+- `robots.txt` — Pour indiquer aux moteurs de recherche les pages à indexer
+- `sitemap.xml` — Sitemap complet pour faciliter l’indexation
+- `humans.txt` — Informations sur l’équipe et le site
 
-## 📈 Référencement
-- Fichier `robots.txt` autorisant l’indexation complète
-- Fichier `sitemap.xml` pour le référencement Google
-- Balises meta optimisées pour chaque page
-
-## 🧭 Auteur
-Développement et optimisation réalisés pour **INVESTAS International**.
-
----
-
-🟡 Après la mise en ligne :
-1. Mets à jour le lien `Sitemap:` dans `robots.txt`
-2. Mets à jour les liens `<loc>` dans `sitemap.xml`
-3. Envoie ton sitemap dans **Google Search Console** pour indexation
+## Contact
+Pour toute question ou suggestion : contact@investas.com
