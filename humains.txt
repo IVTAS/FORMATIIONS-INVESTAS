@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Joseph Sampayo
+Designer: INVESTAS Team
+Content: INVESTAS International
+
+/* SITE */
+Name: INVESTAS FORMATIONS
+URL: https://github.com/ton-utilisateur/FORMATIONS-INVESTAS
+Last update: 2025-10-07
+Standards: HTML5, CSS3, JS
+Language: FR
+Framework: None
+
+/* THANKS */
+Thanks: To all our partners, collaborators, and users
+Contact: contact@investas.com
