@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/index.html</loc>
-    <priority>1.0</priority>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/index.html</loc>
   </url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/accueil.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/a-propos.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/attestation.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/avantages.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/emplois.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/inscription.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/modes-formations.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/partenariats.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/promo.html</loc></url>
-  <url><loc>https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/types-formations.html</loc></url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/a-propos.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/accueil.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/attestation.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/avantages.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/emplois.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/inscription.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/modes-formations.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/partenariats.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/promo.html</loc>
+  </url>
+  <url>
+    <loc>https://ivtas.github.io/FORMATIIONS-INVESTAS/types-formations.html</loc>
+  </url>
 </urlset>

@@ -1,5 +1,5 @@
+# robots.txt pour FORMATIONS-INVESTAS
 User-agent: *
-Allow: /
+Disallow:
 
-# Lien vers ton sitemap (à mettre à jour après la mise en ligne GitHub Pages)
-Sitemap: https://ton-nom-utilisateur.github.io/FORMATIONS-INVESTAS/sitemap.xml
+Sitemap: https://ivtas.github.io/FORMATIIONS-INVESTAS/sitemap.xml
